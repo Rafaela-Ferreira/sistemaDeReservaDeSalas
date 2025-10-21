@@ -4,21 +4,21 @@ Sistema web completo desenvolvido em Flask, com Blueprints, módulos separados e
 
 1. Introdução ao Projeto
 
-Este projeto tem como objetivo criar uma aplicação web segura e funcional, com as seguintes funcionalidades:
+    Este projeto tem como objetivo criar uma aplicação web segura e funcional, com as seguintes funcionalidades:
 
-Cadastro e login de usuários com hash de senha (Flask-Login).
+    Cadastro e login de usuários com hash de senha (Flask-Login).
 
-Proteção de formulários com CSRF (Flask-WTF).
+    Proteção de formulários com CSRF (Flask-WTF).
 
-CRUD completo da entidade principal (Salas de Reunião).
+    CRUD completo da entidade principal (Salas de Reunião).
 
-API RESTful com endpoints equivalentes ao CRUD.
+    API RESTful com endpoints equivalentes ao CRUD.
 
-Persistência de dados em MySQL ou PostgreSQL via SQLAlchemy.
+    Persistência de dados em MySQL ou PostgreSQL via SQLAlchemy.
 
-Código organizado em Blueprints (módulos separados).
+    Código organizado em Blueprints (módulos separados).
 
-Boas práticas de segurança: hash de senha, validação de dados e uso de variáveis de ambiente.
+    Boas práticas de segurança: hash de senha, validação de dados e uso de variáveis de ambiente.
 
 2. Tema do Projeto
 
@@ -77,7 +77,7 @@ Visualização das reservas existentes.
 
     2. Abra no navegador:
     http://127.0.0.1:5000/
-    
+
 Você deverá ver a página inicial definida no Blueprint web, listando as salas cadastradas.
 
 
