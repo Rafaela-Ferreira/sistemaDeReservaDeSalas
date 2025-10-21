@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <div class="container mt-4">
+    <h2>Login</h2>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      <div>
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}
+      </div>
+      <div>
+        {{ form.senha.label }}<br>
+        {{ form.senha(size=32, type="password") }}
+      </div>
+      <div style="margin-top: 10px;">
+        {{ form.submit(class="btn") }}
+      </div>
+    </form>
+
+    <p> Ainda não tem conta?
+      <a href="{{ url_for('web.registro') }}">Registre-se aqui</a>.
+    </p>
+  </div>
+{% endblock %}

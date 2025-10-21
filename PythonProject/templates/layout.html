@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Reserva{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Reserva de Salas</h1>
+        <nav>
+            <a href="{{ url_for('web.index') }}">Início</a> |
+            <a href="{{ url_for('web.reservar') }}">Reservar</a> |
+            <a href="{{ url_for('web.lista_salas') }}">Salas</a> |
+            <a href="{{ url_for('web.lista_reservas') }}">Reservas</a> |
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('web.logout') }}">Sair</a>
+            {% else %}
+                <a href="{{ url_for('web.login') }}">Entrar</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for msg in messages %}
+                        <li>{{ msg }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

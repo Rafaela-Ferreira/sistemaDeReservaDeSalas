@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2>Cadastrar Nova Sala</h2>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div>
+            <label>{{ form.nome.label }}</label><br>
+            {{ form.nome(class="form-control") }}
+            {% for error in form.nome.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label>{{ form.capacidade.label }}</label><br>
+            {{ form.capacidade(class="form-control") }}
+            {% for error in form.capacidade.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        {% if form.descricao %}
+        <div>
+            <label>{{ form.descricao.label }}</label><br>
+            {{ form.descricao(class="form-control") }}
+            {% for error in form.descricao.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <br>
+        <button type="submit" class="btn">Cadastrar Sala</button>
+        <a href="{{ url_for('web.lista_salas') }}" class="btn">Voltar</a>
+    </form>
+</div>
+{% endblock %}

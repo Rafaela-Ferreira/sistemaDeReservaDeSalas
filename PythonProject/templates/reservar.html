@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2>Fazer Reserva</h2>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div>
+            <label>{{ form.sala_id.label }}</label><br>
+            {{ form.sala_id(class="form-select") }}
+            {% for error in form.sala_id.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label>{{ form.data.label }}</label><br>
+            {{ form.data(class="form-control", type="date") }}
+            {% for error in form.data.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label>{{ form.hora_inicio.label }}</label><br>
+            {{ form.hora_inicio(class="form-control", type="time") }}
+            {% for error in form.hora_inicio.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <div>
+            <label>{{ form.hora_fim.label }}</label><br>
+            {{ form.hora_fim(class="form-control", type="time") }}
+            {% for error in form.hora_fim.errors %}
+                <small style="color:red;">{{ error }}</small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <button type="submit" class="btn">Reservar</button>
+        <a href="{{ url_for('web.index') }}" class="btn">Voltar</a>
+    </form>
+</div>
+{% endblock %}
